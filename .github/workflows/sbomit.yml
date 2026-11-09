@@ -27,6 +27,9 @@ jobs:
         with:
           enable-cache: false
 
-      - name: Build
-        run: uv build
-        
+      - name: Build under SBOMit
+        uses: Uk-jake/sbomit-pipeline-runner@main
+        with:
+          build-command: uv build
+          sbom-format: spdx23
+          use-syft: true
